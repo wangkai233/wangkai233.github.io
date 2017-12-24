@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="动态规划的笔记一.基本思想及概念  状态和状态转移方程：eg:d(i)=min{d(i-v[j])+1},i-v[j]&amp;gt;=0。 子问题 子问题独立 子问题重叠 最优子结构 边界 备忘录   ###二.思考流程  1、构造问题所对应的过程。       2、思考过程的最后一个步骤，看看有哪些选择情况。       3、找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/12/24/DP/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="动态规划的笔记一.基本思想及概念  状态和状态转移方程：eg:d(i)=min{d(i-v[j])+1},i-v[j]&amp;gt;=0。 子问题 子问题独立 子问题重叠 最优子结构 边界 备忘录   ###二.思考流程  1、构造问题所对应的过程。       2、思考过程的最后一个步骤，看看有哪些选择情况。       3、找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参">
+<meta property="og:updated_time" content="2017-12-24T12:12:36.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="动态规划的笔记一.基本思想及概念  状态和状态转移方程：eg:d(i)=min{d(i-v[j])+1},i-v[j]&amp;gt;=0。 子问题 子问题独立 子问题重叠 最优子结构 边界 备忘录   ###二.思考流程  1、构造问题所对应的过程。       2、思考过程的最后一个步骤，看看有哪些选择情况。       3、找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-DP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/24/DP/" class="article-date">
+  <time datetime="2017-12-24T12:12:35.891Z" itemprop="datePublished">2017-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="动态规划的笔记"><a href="#动态规划的笔记" class="headerlink" title="动态规划的笔记"></a>动态规划的笔记</h1><h3 id="一-基本思想及概念"><a href="#一-基本思想及概念" class="headerlink" title="一.基本思想及概念"></a>一.基本思想及概念</h3><blockquote>
+<ul>
+<li>状态和状态转移方程：<br>eg:d(i)=min{d(i-v[j])+1},i-v[j]&gt;=0。</li>
+<li>子问题</li>
+<li>子问题独立</li>
+<li>子问题重叠</li>
+<li>最优子结构</li>
+<li>边界</li>
+<li>备忘录</li>
+</ul>
+</blockquote>
+<p>###二.思考流程</p>
+<blockquote>
+<p>1、构造问题所对应的过程。<br>       2、思考过程的最后一个步骤，看看有哪些选择情况。<br>       3、找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参数。<br>       4、使得子问题符合“最优子结构”。<br>       5、找到边界，考虑边界的各种处理方式。<br>       6、确保满足“子问题独立”，一般而言，如果我们是在多个子问题中选择一个作为实施方案，而不会同时实施多个方案，那么子问题就是独立的。<br>       7、考虑如何做备忘录。<br>       8、分析所需时间是否满足要求。<br>       9、写出转移方程式。</p>
+</blockquote>
+<p>###三.参考链接</p>
+<blockquote>
+<ul>
+<li><a href="http://blog.csdn.net/woshioosm/article/details/7438834&quot;Title&quot;" target="_blank" rel="noopener">趣味入门</a> </li>
+<li><a href="http://www.360doc.com/content/13/0601/00/8076359_289597587.shtml&quot;Title&quot;" target="_blank" rel="noopener">进阶之路</a></li>
+<li><a href="http://blog.csdn.net/eagle_or_snail/article/details/50987044&quot;Title&quot;" target="_blank" rel="noopener">大量习题</a></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/24/DP/" data-id="cjbkr0ri600005ovhkven8osv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/24/动态规划的笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          动态规划的笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/19/The-bug-of-setup-virtual-Ubuntu/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">The bug of setup virtual Ubuntu</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/24/动态规划的笔记/">动态规划的笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/24/DP/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/19/The-bug-of-setup-virtual-Ubuntu/">The bug of setup virtual Ubuntu</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/19/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
