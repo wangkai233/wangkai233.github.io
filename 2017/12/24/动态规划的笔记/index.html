@@ -7,16 +7,16 @@
   
   <title>动态规划的笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="动态规划的笔记一.基本思想及概念  状态和状态转移方程：eg:d(i)=min{d(i-v[j])+1},i-v[j]&amp;gt;=0。 子问题 子问题独立 子问题重叠 最优子结构 边界 备忘录   ###二.思考流程  1、构造问题所对应的过程。       2、思考过程的最后一个步骤，看看有哪些选择情况。       3、找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参">
+  <meta name="description" content="动态规划的笔记一.基本思想及概念  状态和状态转移方程：eg:d(i)=min{d(i-v[j])+1},i-v[j]&amp;gt;=0。 子问题 子问题独立 子问题重叠 最优子结构 边界 备忘录   ###二.思考流程  1. 构造问题所对应的过程。 2. 思考过程的最后一个步骤，看看有哪些选择情况。 3. 找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参数。 4. 使得子">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态规划的笔记">
 <meta property="og:url" content="http://yoursite.com/2017/12/24/动态规划的笔记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="动态规划的笔记一.基本思想及概念  状态和状态转移方程：eg:d(i)=min{d(i-v[j])+1},i-v[j]&amp;gt;=0。 子问题 子问题独立 子问题重叠 最优子结构 边界 备忘录   ###二.思考流程  1、构造问题所对应的过程。       2、思考过程的最后一个步骤，看看有哪些选择情况。       3、找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参">
-<meta property="og:updated_time" content="2017-12-24T12:25:42.458Z">
+<meta property="og:description" content="动态规划的笔记一.基本思想及概念  状态和状态转移方程：eg:d(i)=min{d(i-v[j])+1},i-v[j]&amp;gt;=0。 子问题 子问题独立 子问题重叠 最优子结构 边界 备忘录   ###二.思考流程  1. 构造问题所对应的过程。 2. 思考过程的最后一个步骤，看看有哪些选择情况。 3. 找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参数。 4. 使得子">
+<meta property="og:updated_time" content="2017-12-25T02:07:10.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划的笔记">
-<meta name="twitter:description" content="动态规划的笔记一.基本思想及概念  状态和状态转移方程：eg:d(i)=min{d(i-v[j])+1},i-v[j]&amp;gt;=0。 子问题 子问题独立 子问题重叠 最优子结构 边界 备忘录   ###二.思考流程  1、构造问题所对应的过程。       2、思考过程的最后一个步骤，看看有哪些选择情况。       3、找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参">
+<meta name="twitter:description" content="动态规划的笔记一.基本思想及概念  状态和状态转移方程：eg:d(i)=min{d(i-v[j])+1},i-v[j]&amp;gt;=0。 子问题 子问题独立 子问题重叠 最优子结构 边界 备忘录   ###二.思考流程  1. 构造问题所对应的过程。 2. 思考过程的最后一个步骤，看看有哪些选择情况。 3. 找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参数。 4. 使得子">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -98,8 +98,16 @@
 </blockquote>
 <p>###二.思考流程</p>
 <blockquote>
-<p>1、构造问题所对应的过程。<br>       2、思考过程的最后一个步骤，看看有哪些选择情况。<br>       3、找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参数。<br>       4、使得子问题符合“最优子结构”。<br>       5、找到边界，考虑边界的各种处理方式。<br>       6、确保满足“子问题独立”，一般而言，如果我们是在多个子问题中选择一个作为实施方案，而不会同时实施多个方案，那么子问题就是独立的。<br>       7、考虑如何做备忘录。<br>       8、分析所需时间是否满足要求。<br>       9、写出转移方程式。</p>
-</blockquote>
+<pre><code>1. 构造问题所对应的过程。
+2. 思考过程的最后一个步骤，看看有哪些选择情况。
+3. 找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参数。
+4. 使得子问题符合“最优子结构”。
+5. 找到边界，考虑边界的各种处理方式。
+6. 确保满足“子问题独立”，一般而言，如果我们是在多个子问题中选择一个作为实施方案，而不会同时实施多个方案，那么子问题就是独立的。
+7. 考虑如何做备忘录。
+8. 分析所需时间是否满足要求。
+9. 写出转移方程式。  
+</code></pre></blockquote>
 <p>###三.参考链接</p>
 <blockquote>
 <ul>
@@ -112,7 +120,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/24/动态规划的笔记/" data-id="cjbkr0rj000015ovhb1l3ptgr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/24/动态规划的笔记/" data-id="cjbllatlh0001zkvh9vdsuioz" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -122,9 +130,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2017/12/24/DP/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
+    <a href="/2017/12/19/The-bug-of-setup-virtual-Ubuntu/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">The bug of setup virtual Ubuntu</div>
     </a>
   
 </nav>
@@ -146,7 +154,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
@@ -156,16 +164,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
         
           <li>
             <a href="/2017/12/24/动态规划的笔记/">动态规划的笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/24/DP/">(no title)</a>
           </li>
         
           <li>
@@ -189,7 +193,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

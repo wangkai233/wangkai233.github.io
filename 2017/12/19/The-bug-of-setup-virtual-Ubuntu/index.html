@@ -7,13 +7,20 @@
   
   <title>The bug of setup virtual Ubuntu | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="安装Ubuntu虚拟机遇到的坑  一开始用VM14.0新建完虚拟机后直接黑屏，也不跳出安装界面，换了VirtualBox后终于可以安装了。 还有旧的镜像也可能会出问题，我就遇到安装过程显示无法写入硬盘，换了个镜像就好了，最好自己下一个，官网就很方便，而网易啊清华的镜像站看着有点懵逼。 一路顺利来到安装的界面，但是，怎么可能让你那么快如愿，弹出了这个东东： 在网上搜了好久，事实上，是我把引导设置错了">
+<meta property="og:type" content="article">
 <meta property="og:title" content="The bug of setup virtual Ubuntu">
 <meta property="og:url" content="http://yoursite.com/2017/12/19/The-bug-of-setup-virtual-Ubuntu/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-12-19T12:48:44.892Z">
+<meta property="og:description" content="安装Ubuntu虚拟机遇到的坑  一开始用VM14.0新建完虚拟机后直接黑屏，也不跳出安装界面，换了VirtualBox后终于可以安装了。 还有旧的镜像也可能会出问题，我就遇到安装过程显示无法写入硬盘，换了个镜像就好了，最好自己下一个，官网就很方便，而网易啊清华的镜像站看着有点懵逼。 一路顺利来到安装的界面，但是，怎么可能让你那么快如愿，弹出了这个东东： 在网上搜了好久，事实上，是我把引导设置错了">
+<meta property="og:image" content="f:/4.jpg">
+<meta property="og:image" content="f:/1.jpg">
+<meta property="og:image" content="f:/1.png">
+<meta property="og:updated_time" content="2017-12-25T02:28:00.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The bug of setup virtual Ubuntu">
+<meta name="twitter:description" content="安装Ubuntu虚拟机遇到的坑  一开始用VM14.0新建完虚拟机后直接黑屏，也不跳出安装界面，换了VirtualBox后终于可以安装了。 还有旧的镜像也可能会出问题，我就遇到安装过程显示无法写入硬盘，换了个镜像就好了，最好自己下一个，官网就很方便，而网易啊清华的镜像站看着有点懵逼。 一路顺利来到安装的界面，但是，怎么可能让你那么快如愿，弹出了这个东东： 在网上搜了好久，事实上，是我把引导设置错了">
+<meta name="twitter:image" content="f:/4.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -49,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -82,11 +89,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="安装Ubuntu虚拟机遇到的坑"><a href="#安装Ubuntu虚拟机遇到的坑" class="headerlink" title="安装Ubuntu虚拟机遇到的坑"></a>安装Ubuntu虚拟机遇到的坑</h1><blockquote>
+<ul>
+<li>一开始用VM14.0新建完虚拟机后直接黑屏，也不跳出安装界面，换了VirtualBox后终于可以安装了。</li>
+<li>还有旧的镜像也可能会出问题，我就遇到安装过程显示无法写入硬盘，换了个镜像就好了，最好自己下一个，官网就很方便，而网易啊清华的镜像站看着有点懵逼。</li>
+<li>一路顺利来到安装的界面，但是，怎么可能让你那么快如愿，弹出了这个东东：<br><img src="F:\4.jpg" alt="alt text" title="Title"><br><img src="F:\1.jpg" alt="alt text" title="Title"></li>
+<li>在网上搜了好久，事实上，是我把引导设置错了分区，应该改成/boot的，而且boot100M太小了。<br>最后就很开心啦！<br><img src="F:\1.png" alt="alt text" title="Title"></li>
+</ul>
+</blockquote>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/19/The-bug-of-setup-virtual-Ubuntu/" data-id="cjbkr0rjk00035ovh2bgkry1r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/19/The-bug-of-setup-virtual-Ubuntu/" data-id="cjbllatka0000zkvhfv0fgg6e" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -95,18 +110,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/12/24/DP/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+    <a href="/2017/12/24/动态规划的笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
       <div class="article-nav-title">
         
-          (no title)
+          动态规划的笔记
         
       </div>
     </a>
   
   
     <a href="/2017/12/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Viejo</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -129,7 +144,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
@@ -139,16 +154,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
         
           <li>
             <a href="/2017/12/24/动态规划的笔记/">动态规划的笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/24/DP/">(no title)</a>
           </li>
         
           <li>
@@ -172,7 +183,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
