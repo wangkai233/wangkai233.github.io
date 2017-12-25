@@ -7,12 +7,16 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="==socket网络编程学习笔记== ####基本知识 IP Address Port Protocol 数据传输方式 SOCK_DGRAM&amp;amp;&amp;amp;SOCK_STREAM   memset函数memcpy函数 void memset(void s,int c,size_t n)总的作用：将已开辟内存空间 s 的首 n 个字节的值设为值 c。但是c的ASCII码为0~255.   mem">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/12/25/socket/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="==socket网络编程学习笔记== ####基本知识 IP Address Port Protocol 数据传输方式 SOCK_DGRAM&amp;amp;&amp;amp;SOCK_STREAM   memset函数memcpy函数 void memset(void s,int c,size_t n)总的作用：将已开辟内存空间 s 的首 n 个字节的值设为值 c。但是c的ASCII码为0~255.   mem">
+<meta property="og:updated_time" content="2017-12-25T11:18:32.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="==socket网络编程学习笔记== ####基本知识 IP Address Port Protocol 数据传输方式 SOCK_DGRAM&amp;amp;&amp;amp;SOCK_STREAM   memset函数memcpy函数 void memset(void s,int c,size_t n)总的作用：将已开辟内存空间 s 的首 n 个字节的值设为值 c。但是c的ASCII码为0~255.   mem">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,9 +63,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-socket" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-socket" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/25/socket/" class="article-date">
   <time datetime="2017-12-25T11:18:58.454Z" itemprop="datePublished">2017-12-25</time>
@@ -142,167 +144,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-动态规划的笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/24/动态规划的笔记/" class="article-date">
-  <time datetime="2017-12-24T12:22:12.000Z" itemprop="datePublished">2017-12-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/24/动态规划的笔记/">动态规划的笔记</a>
-    </h1>
+    <a href="/2017/12/24/动态规划的笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">动态规划的笔记</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="动态规划的笔记"><a href="#动态规划的笔记" class="headerlink" title="动态规划的笔记"></a>动态规划的笔记</h1><h3 id="一-基本思想及概念"><a href="#一-基本思想及概念" class="headerlink" title="一.基本思想及概念"></a>一.基本思想及概念</h3><blockquote>
-<ul>
-<li>状态和状态转移方程：<br>eg:d(i)=min{d(i-v[j])+1},i-v[j]&gt;=0。</li>
-<li>子问题</li>
-<li>子问题独立</li>
-<li>子问题重叠</li>
-<li>最优子结构</li>
-<li>边界</li>
-<li>备忘录</li>
-</ul>
-</blockquote>
-<p>###二.思考流程</p>
-<blockquote>
-<pre><code>1. 构造问题所对应的过程。
-2. 思考过程的最后一个步骤，看看有哪些选择情况。
-3. 找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参数。
-4. 使得子问题符合“最优子结构”。
-5. 找到边界，考虑边界的各种处理方式。
-6. 确保满足“子问题独立”，一般而言，如果我们是在多个子问题中选择一个作为实施方案，而不会同时实施多个方案，那么子问题就是独立的。
-7. 考虑如何做备忘录。
-8. 分析所需时间是否满足要求。
-9. 写出转移方程式。  
-</code></pre></blockquote>
-<p>###三.参考链接</p>
-<blockquote>
-<ul>
-<li><a href="http://blog.csdn.net/woshioosm/article/details/7438834&quot;Title&quot;" target="_blank" rel="noopener">趣味入门</a> </li>
-<li><a href="http://www.360doc.com/content/13/0601/00/8076359_289597587.shtml&quot;Title&quot;" target="_blank" rel="noopener">进阶之路</a></li>
-<li><a href="http://blog.csdn.net/eagle_or_snail/article/details/50987044&quot;Title&quot;" target="_blank" rel="noopener">大量习题</a></li>
-</ul>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/24/动态规划的笔记/" data-id="cjbm425po0001ogvh6bj4uasu" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-The-bug-of-setup-virtual-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/19/The-bug-of-setup-virtual-Ubuntu/" class="article-date">
-  <time datetime="2017-12-19T12:48:44.000Z" itemprop="datePublished">2017-12-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/The-bug-of-setup-virtual-Ubuntu/">The bug of setup virtual Ubuntu</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装Ubuntu虚拟机遇到的坑"><a href="#安装Ubuntu虚拟机遇到的坑" class="headerlink" title="安装Ubuntu虚拟机遇到的坑"></a>安装Ubuntu虚拟机遇到的坑</h1><blockquote>
-<ul>
-<li>一开始用VM14.0新建完虚拟机后直接黑屏，也不跳出安装界面，换了VirtualBox后终于可以安装了。</li>
-<li>还有旧的镜像也可能会出问题，我就遇到安装过程显示无法写入硬盘，换了个镜像就好了，最好自己下一个，官网就很方便，而网易啊清华的镜像站看着有点懵逼。</li>
-<li>一路顺利来到安装的界面，但是，怎么可能让你那么快如愿，弹出了这个东东：<br><img src="F:\4.jpg" alt="alt text" title="Title"><br><img src="F:\1.jpg" alt="alt text" title="Title"></li>
-<li>在网上搜了好久，事实上，是我把引导设置错了分区，应该改成/boot的，而且boot100M太小了。<br>最后就很开心啦！<br><img src="F:\1.png" alt="alt text" title="Title"></li>
-</ul>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/19/The-bug-of-setup-virtual-Ubuntu/" data-id="cjbm425qf0002ogvhdf861sm6" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/19/hello-world/" class="article-date">
-  <time datetime="2017-12-19T12:14:22.119Z" itemprop="datePublished">2017-12-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/19/hello-world/" data-id="cjbm425qj0003ogvhac09236q" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
