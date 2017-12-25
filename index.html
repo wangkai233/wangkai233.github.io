@@ -73,8 +73,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="socket网络编程学习笔记"><a href="#socket网络编程学习笔记" class="headerlink" title="==socket网络编程学习笔记=="></a>==socket网络编程学习笔记==</h1><ul>
-<li>####基本知识</li>
+        <h1 id="socket网络编程学习笔记"><a href="#socket网络编程学习笔记" class="headerlink" title="== socket网络编程学习笔记 =="></a>== socket网络编程学习笔记 ==</h1><ul>
+<li><h4 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h4></li>
 <li>IP Address</li>
 <li>Port</li>
 <li>Protocol</li>
@@ -93,15 +93,15 @@
 </ul>
 <hr>
 <ul>
-<li>####some link<br><a href="http://c.biancheng.net/cpp/html/3029.html" target="_blank" rel="noopener">http://c.biancheng.net/cpp/html/3029.html</a> to help you</li>
+<li><h4 id="some-link"><a href="#some-link" class="headerlink" title="some link"></a>some link</h4><a href="http://c.biancheng.net/cpp/html/3029.html" target="_blank" rel="noopener">http://c.biancheng.net/cpp/html/3029.html</a> to help you</li>
 </ul>
 <hr>
 <ul>
-<li>####winsock  动态链接库DLL</li>
+<li><h4 id="winsock-动态链接库DLL"><a href="#winsock-动态链接库DLL" class="headerlink" title="winsock  动态链接库DLL"></a>winsock  动态链接库DLL</h4></li>
 </ul>
 <hr>
 <ul>
-<li>####WINSOCK编程步骤：</li>
+<li><h4 id="WINSOCK编程步骤："><a href="#WINSOCK编程步骤：" class="headerlink" title="WINSOCK编程步骤："></a>WINSOCK编程步骤：</h4></li>
 </ul>
 <ol>
 <li>WinSock 编程的第一步就是加载 ws2_32.dll，然后调用 WSAStartup() 函数进行初始化，并指明要使用的版本号。</li>
@@ -113,7 +113,7 @@
 </ol>
 <hr>
 <ul>
-<li>####迭代与回声</li>
+<li><h4 id="迭代与回声"><a href="#迭代与回声" class="headerlink" title="迭代与回声"></a>迭代与回声</h4></li>
 <li>回声代码实现：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">client端：</span><br><span class="line">//获取用户输入的字符串并发送给服务器</span><br><span class="line"><span class="code">    char bufSend[BUF_SIZE] = &#123;0&#125;;</span></span><br><span class="line"><span class="code">    printf("Input a string: ");</span></span><br><span class="line"><span class="code">    scanf("%s", bufSend);</span></span><br><span class="line"><span class="code">    send(sock, bufSend, strlen(bufSend), 0);</span></span><br><span class="line"><span class="code">    //接收服务器传回的数据</span></span><br><span class="line"><span class="code">    char bufRecv[BUF_SIZE] = &#123;0&#125;;</span></span><br><span class="line"><span class="code">    recv(sock, bufRecv, BUF_SIZE, 0);</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -125,18 +125,18 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">client端：</span><br><span class="line">  char bufSend[BUF_SIZE] = &#123;0&#125;;</span><br><span class="line"><span class="code">    char bufRecv[BUF_SIZE] = &#123;0&#125;;</span></span><br><span class="line"><span class="code">    while(1)&#123;</span></span><br><span class="line"><span class="code">        //创建套接字</span></span><br><span class="line"><span class="code">        SOCKET sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);</span></span><br><span class="line"><span class="code">        connect(sock, (SOCKADDR*)&amp;sockAddr, sizeof(SOCKADDR));</span></span><br><span class="line"><span class="code">        //获取用户输入的字符串并发送给服务器</span></span><br><span class="line"><span class="code">        printf("Input a string: ");</span></span><br><span class="line"><span class="code">        gets(bufSend);</span></span><br><span class="line"><span class="code">        send(sock, bufSend, strlen(bufSend), 0);</span></span><br><span class="line"><span class="code">        //接收服务器传回的数据</span></span><br><span class="line"><span class="code">        recv(sock, bufRecv, BUF_SIZE, 0);</span></span><br><span class="line"><span class="code">        //输出接收到的数据</span></span><br><span class="line"><span class="code">        printf("Message form server: %s\n", bufRecv);</span></span><br><span class="line"><span class="code">        </span></span><br><span class="line"><span class="code">        memset(bufSend, 0, BUF_SIZE);  //重置缓冲区</span></span><br><span class="line"><span class="code">        memset(bufRecv, 0, BUF_SIZE);  //重置缓冲区</span></span><br><span class="line"><span class="code">        closesocket(sock);  //关闭套接字</span></span><br><span class="line"><span class="code">    &#125;</span></span><br></pre></td></tr></table></figure>
 <hr>
 <ul>
-<li>####阻塞模式和粘包问题<br>数据的“粘包”问题，客户端发送的多个数据包被当做一个数据包接收。也称数据的无边界性，read()/recv() 函数不知道数据包的开始或结束标志（实际上也没有任何开始或结束标志），只把它们当做连续的数据流来处理。</li>
+<li><h4 id="阻塞模式和粘包问题"><a href="#阻塞模式和粘包问题" class="headerlink" title="阻塞模式和粘包问题"></a>阻塞模式和粘包问题</h4>数据的“粘包”问题，客户端发送的多个数据包被当做一个数据包接收。也称数据的无边界性，read()/recv() 函数不知道数据包的开始或结束标志（实际上也没有任何开始或结束标志），只把它们当做连续的数据流来处理。</li>
 </ul>
 <hr>
 <ul>
-<li>####三次握手和四次断开</li>
+<li><h4 id="三次握手和四次断开"><a href="#三次握手和四次断开" class="headerlink" title="三次握手和四次断开"></a>三次握手和四次断开</h4></li>
 </ul>
 <hr>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/25/socket/" data-id="cjbm425pe0000ogvhj6945jev" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/25/socket/" data-id="cjbm45sks0002swvhzdj9pp2f" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -203,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/24/动态规划的笔记/" data-id="cjbm425po0001ogvh6bj4uasu" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/24/动态规划的笔记/" data-id="cjbm45skx0003swvhmnkok71t" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -247,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/19/The-bug-of-setup-virtual-Ubuntu/" data-id="cjbm425qf0002ogvhdf861sm6" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/19/The-bug-of-setup-virtual-Ubuntu/" data-id="cjbm45sk20000swvh2wfeslq3" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -292,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/19/hello-world/" data-id="cjbm425qj0003ogvhac09236q" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/19/hello-world/" data-id="cjbm45skj0001swvhnke8h6ms" class="article-share-link">Teilen</a>
       
       
     </footer>
